@@ -114,13 +114,11 @@ let contract_abi = [
 	}
 ];
 
+
+let EventTest = web3.eth.contract(contract_abi);
 let EventTestContract = ClientReceipt.at("0xc4d5177E415a5f5116Dc07Db14273f2755Ef7aAe");
 
 EventTestContract.transfer(function(err, data) {
-   if (!err){
-      console.log(data);
-   }
-   else{
-      console.error(err);
-   }
+   if (!err)
+   console.log(data);
 });
