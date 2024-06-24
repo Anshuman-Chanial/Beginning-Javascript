@@ -32,8 +32,8 @@ EventTestContract.methods.transfer().call(function(err, data) {
 });
 */
 
-
 const Web3 = require('web3');
+console.log(Web3.version);
 let contract_abi = [
 	{
 		"anonymous": false,
@@ -70,7 +70,7 @@ let contract_abi = [
 ];
 
 
-let EventTest = web3.eth.contract(contract_abi);
+let EventTest = Web3.eth.contract(contract_abi);
 let EventTestContract = ClientReceipt.at("0xd9145CCE52D386f254917e481eB44e9943F39138");
 
 EventTestContract.transfer(function(err, data) {
