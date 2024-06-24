@@ -33,10 +33,7 @@ EventTestContract.methods.transfer().call(function(err, data) {
 */
 
 
-
-
-
-
+const Web3 = require('web3');
 let contract_abi = [
 	{
 		"anonymous": false,
@@ -49,65 +46,23 @@ let contract_abi = [
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "event1",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
 				"internalType": "string",
 				"name": "message",
 				"type": "string"
 			}
 		],
-		"name": "event2",
+		"name": "messLog",
 		"type": "event"
 	},
 	{
 		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "event3",
+		"inputs": [],
+		"name": "messLog2",
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "message",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "triggerEvents",
+		"inputs": [],
+		"name": "test",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -116,7 +71,7 @@ let contract_abi = [
 
 
 let EventTest = web3.eth.contract(contract_abi);
-let EventTestContract = ClientReceipt.at("0xc4d5177E415a5f5116Dc07Db14273f2755Ef7aAe");
+let EventTestContract = ClientReceipt.at("0xd9145CCE52D386f254917e481eB44e9943F39138");
 
 EventTestContract.transfer(function(err, data) {
    if (!err)
