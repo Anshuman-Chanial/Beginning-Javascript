@@ -7,7 +7,6 @@ Assessment Requirements
 3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
 4. For good measure, getTotalSupply() should return the number of NFT's you have created
 */
-
 // create a variable to hold your NFT's
 let NFTs=[];
 
